@@ -12,7 +12,7 @@ const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: 'postgres',
   logging: false,
-  port: 5433 // Aquí se especifica el puerto de la base de datos
+  port: 5432 // Aquí se especifica el puerto de la base de datos
 });
 
 export default sequelize;
