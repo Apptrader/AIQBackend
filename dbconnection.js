@@ -8,6 +8,8 @@ Exporta la instancia de Sequelize para que pueda ser utilizada en otros archivos
 import { Sequelize } from 'sequelize';
 import { DB_HOST, FRONTEND_URL, DB_DATABASE, DB_USER, DB_PASSWORD } from './config.js';
 
+console.log(DB_HOST)
+
 const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: 'postgres',
