@@ -6,15 +6,14 @@ Exporta la instancia de Sequelize para que pueda ser utilizada en otros archivos
 */
 // dbconnection.js
 import { Sequelize } from 'sequelize';
-import { DB_HOST, FRONTEND_URL, DB_DATABASE, DB_USER, DB_PASSWORD } from './config.js';
-
-console.log(DB_HOST)
+import {DB_HOST, FRONTEND_URL, DB_DATABASE, DB_USER,DB_PASSWORD } from './config.js'
 
 const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: 'postgres',
   logging: false,
-  port: 5432 // Aquí se especifica el puerto de la base de datos
 });
+
+
 
 export default sequelize;

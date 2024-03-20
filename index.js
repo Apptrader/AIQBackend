@@ -86,6 +86,27 @@ sequelize.sync({ force: true })
 
     // Crea el usuario por defecto
     await createDefaultUser();
+    await createUser(
+      {
+        UserName: "test2",
+        Email: "test2@gmail.com",
+        Password: 'test2',
+        Phone: "0987654321",
+        referralsCount: 0,
+        idPaidPlan:2,
+        status: 0,
+        role: '0' // '1' for admin, '0' for regular user
+      });
+     await createUser( {
+        UserName: "test3",
+        Email: "test3@gmail.com",
+        Password: 'test3',
+        Phone: "1357924680",
+        referralsCount: 0,
+        idPaidPlan: 2,
+        status: 1,
+        role: '0' // '1' for admin, '0' for regular user
+      });
     await createPaidPlan({
       planName: 'Sonic',
       planCost: 600,
@@ -120,7 +141,7 @@ sequelize.sync({ force: true })
     await createVideoChapters()
     await createVideos()
 
-    const port = 80;
+    const port = 4000;
     app.listen(port, () => {
       console.log(`Servidor escuchando en http://localhost:${port}`);
     });
